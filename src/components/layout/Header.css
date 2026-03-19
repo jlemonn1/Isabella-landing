@@ -1,0 +1,126 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: var(--transition);
+}
+
+.header--scrolled {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  padding: 12px 0;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo-text {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: #C41E3A;
+  letter-spacing: 1px;
+}
+
+.header--scrolled .header__logo-text {
+  color: var(--color-primary);
+}
+
+.header__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.header__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: var(--transition);
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+.header--scrolled .header__link {
+  color: var(--color-text);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__whatsapp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.header__whatsapp:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.header--scrolled .header__whatsapp {
+  border-color: #e0e0e0;
+  color: var(--color-text);
+}
+
+.header--scrolled .header__whatsapp:hover {
+  background: #f5f5f5;
+  border-color: #25d366;
+  color: #25d366;
+}
+
+.header__cta {
+  padding: 12px 24px;
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__logo-text {
+    font-size: 24px;
+  }
+
+  .header__whatsapp {
+    width: 36px;
+    height: 36px;
+  }
+}
